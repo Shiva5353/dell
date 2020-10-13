@@ -1,0 +1,20 @@
+<project name="java" default="jar">
+	<target name="dir" >
+		<mkdir dir="src" />
+		<mkdir dir="build\classes" />
+		<mkdir dir="build\jar" />
+	</target>
+	<target name="compile" depends="dir">
+		<javac srcdir="src" destdir="build\classes" />
+	</target>	
+	<target name="jar" depends="compile">
+		<jar destfile="build\jar\HelloWorld.jar" basedir="build\classes">
+			<manifest>
+				<attribute name="Main-Class" value="HelloWorld" />
+			</manifest>	
+		</jar>
+	</target>
+	<target name="run" depends="jar">
+		<java jar="build\jar\HelloWorld.jar" fork="true" />
+	</target>	
+</project>	
