@@ -1,0 +1,12 @@
+<project name="file" default="delete">
+	<target name="mkdir" >
+		<mkdir dir="folder-1"/>
+		<mkdir dir="folder-1"/>
+                <touch file="folder-1/inp.txt"/>
+         </target>
+	 <target name="delete" depends="mkdir">
+		 <delete dir="folder-2"/>
+	 </target>
+</project>		 
+
+
